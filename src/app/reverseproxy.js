@@ -15,6 +15,7 @@ var reo ='<html><head><title>Node.js MySQL Select</title></head><body  style="ba
 
 //sets and returns html table with results from sql select
 //Receives sql query and callback function to return the table
+//Code reference from https://coursesweb.net/nodejs/select-mysql-output-html-table
 function setResHtml(sql, cb){
   pool.getConnection((err, con)=>{
     if(err) throw err;
