@@ -4,17 +4,18 @@ const http = require('http');
 const mysql = require('mysql');
 
 const pool = mysql.createPool({
-  host: "capstonesentiment2.cjzgfj3nh7rd.eu-west-1.rds.amazonaws.com",
-  user: "sentiment",
-  password: "sentiment",
+  host: "capstonesentiment2.cjzgfj3nh7rd.eu-west-1.rds.amazonaws.com", //end point for capstonesentiment2
+  user: "sentiment",  //user name for capstonesentiment2
+  password: "sentiment",  //Password for capstonesentiment2
   database: "capstonesentiment2"
 });
 
-//html string that will be send to browser
+//html string that will be send to browser, page view
 var reo ='<html><head><title>Node.js MySQL Select</title></head><body  style="background-color:powderblue;"><h1>Node.js MySQL Select</h1>{${table}}</body></html>';
 
 //sets and returns html table with results from sql select
 //Receives sql query and callback function to return the table
+//Code reference from https://coursesweb.net/nodejs/select-mysql-output-html-table
 function setResHtml(sql, cb){
   pool.getConnection((err, con)=>{
     if(err) throw err;
