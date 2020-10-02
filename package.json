@@ -1,0 +1,13 @@
+{
+  "name": "capstonesentiment",
+  "version": "0.0.1",
+  "author": "Anubhav Aron",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mysql": "2.x.x",
+    "express": "^4.16.1"
+  }
+}
