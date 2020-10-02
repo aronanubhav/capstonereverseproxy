@@ -17,7 +17,7 @@ COPY . .
 # Bind the port that the image will run on
 EXPOSE 8080
 
-# Define the Docker image's behavior at runtime
 # Used to display data from RDS to HTML
+#Used to fetch complete data from RDS
 CMD ["node", "reverseproxy.js"] 
 
