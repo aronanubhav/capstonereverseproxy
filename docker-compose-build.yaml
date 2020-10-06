@@ -1,0 +1,18 @@
+version: "3"
+services:
+  capstonereverseproxy:
+    build:
+      context: .
+    image: aronanubhav/capstonereverseproxy 
+  capstonecommittodb:
+    build:
+      context: ../capstonecommittodb
+    image: aronanubhav/capstonecommittodb
+  backend_feed:
+    build:
+      context: ../../udacity-c2-restapi-feed  
+    image: aronanubhav/udacity-restapi-feed
+  frontend:
+    build:
+      context: ../../udacity-c2-frontend  
+    image: aronanubhav/udacity-frontend
