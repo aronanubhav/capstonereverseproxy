@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - 13
+
+services:
+  - docker
+
+# Pre-testing installs
+install:
+  - echo "nothing needs to be installed"
+
+# Scripts to be run such as tests
+before_script:
+  - echo "no tests"
+
+script:
+  - docker --version # print the version for logging
+  - docker build -t capstonereverseproxy .
+  - docker tag capstonereverseproxy aronanubhav/capstonereverseproxy:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push aronanubhav/capstonereverseproxy
+
+
+  #aws eks --region <region-code> update-kubeconfig --name <cluster_name>
